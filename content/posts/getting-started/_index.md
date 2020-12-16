@@ -1,8 +1,8 @@
 ---
-title: Deploy Site
+title: getting-started
 menu:
     sidebar:
-        name: Deploy Site
+        name: Getting Started
         identifier: getting-started
         weight: 300
 ---
