@@ -4,6 +4,7 @@ nickname: "Shubo"
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "Hi, I am"
 image: "images/shubo_zhang.jpg"
+
 # give your some contact information. they will be used in the footer
 contactInfo:
   email: "shubozhang@outlook.com"

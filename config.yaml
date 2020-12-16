@@ -3,6 +3,13 @@ languageCode: en-us
 title: Shubo Zhang
 theme: "toha"
 
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
+languages:
+  en:
+    languageName: English
+    weight: 1
+
 # Allow raw html in markdown file
 markup:
   goldmark:
@@ -44,7 +51,7 @@ Params:
   gitRepo: https://github.com/shubozhang/shubozhang.github.io
 
   # specify whether I want to write some blog posts or not
-  enableBlogPost: false
+  enableBlogPost: true
 
   # specify whether I want to show Table of Contents in reading page
   enableTOC: true
@@ -59,18 +66,3 @@ Params:
   # Currently, I can just hide it from the footer.
   newsletter:
     enable: true
-
-  # some information about I
-  author:
-    name: "Shubo Zhang"
-    nickname: "Shubo"
-    image: "images/shubo_zhang.jpg"
-    # give my contact information. they will be used in the footer
-    contactInfo:
-      email: "shubozhang@outlook.com"
-      phone: "+1234567890"
-    # a summary of what I do
-    summary:
-    - I am a Developer
-    - I work with Go
-    - I love to work with some fun projects
