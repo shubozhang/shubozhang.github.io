@@ -1,6 +1,6 @@
 # section information
 section:
-  name: About
+  name: About Me
   id: about
   enable: true
   weight: 1
@@ -8,44 +8,43 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Software Engineer
+designation: Senior Software Engineer
 # your company information
 company:
-  name: Example Co.
-  url: "https://www.example.com"
+  name: Tenable
+  url: "https://www.tenable.com"
 
-# your resume. this file path should be relative to you "static" directory
+# TODO
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate software engineer with x years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
+summary: 'I am a passionate software engineer with 10+ years of working experience. I built OSS tools for [Kubernetes](https://kubernetes.io/) using GO. My tools help people to deploy their workloads in Kubernetes. Sometimes, I work on some fun projects such as writing a theme, etc.'
 
-# your social links
 # give as many as you want. use font-awesome for the icons.
 socialLinks:
   - name: Email
     icon: "fas fa-envelope"
-    url: "example@gmail.com"
+    url: "shubozhang@outlook.com"
 
   - name: Github
     icon: "fab fa-github"
-    url: "https://www.github.com/example"
+    url: "https://www.github.com/shubozhang"
 
-  - name: Stackoverflow
-    icon: "fab fa-stack-overflow"
-    url: "#"
-
-  - name: LinkedIn
-    icon: "fab fa-linkedin"
-    url: "#"
-
-  - name: Twitter
-    icon: "fab fa-twitter"
-    url: "#"
-
-  - name: Facebook
-    icon: "fab fa-facebook"
-    url: "#"
+#  - name: Stackoverflow
+#    icon: "fab fa-stack-overflow"
+#    url: "#"
+#
+#  - name: LinkedIn
+#    icon: "fab fa-linkedin"
+#    url: "#"
+#
+#  - name: Twitter
+#    icon: "fab fa-twitter"
+#    url: "#"
+#
+#  - name: Facebook
+#    icon: "fab fa-facebook"
+#    url: "#"
 
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
