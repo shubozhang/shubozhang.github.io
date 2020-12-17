@@ -11,14 +11,14 @@ section:
 # Your experiences
 experiences:
   - company:
-      name: Example Co.
-      url: "https://www.example.com"
-      location: Dhaka Branch
+      name: Tenable
+      url: "https://www.tenable.com"
+      location: Columbia, MD
       # company overview
-      overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+      overview: Tenable delivers unparalleled coverage and comprehensive insight to enable you to detect vulnerabilities, assess risk, and prioritize remediation for every asset, in every environment.
     positions:
       - designation: Senior Software Engineer
-        start: Nov 2019
+        start: Jan. 2020
         # don't provide end date if you are currently working there. It will be replaced by "Present"
         # end: Dec 2020
         # give some points about what was your responsibilities at the company.
@@ -28,15 +28,49 @@ experiences:
           - Lead backend team.
 
   - company:
-      name: PreExample Co.
-      url: "https://www.preexample.com"
-      location: Nowhere
-      overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+      name: Nielsen
+      url: "https://www.nielsen.com"
+      location: Columbia, MD
+      overview: Nielsen is a global measurement and data analytics company that provides the most complete and trusted view of consumers and markets worldwide. Nielsen has operations in over 100 countries.
     positions:
       - designation: Software Engineer
-        start: March 2016
-        end: May 2017
+        start: Oct. 2018
+        end: Jan. 2020
         responsibilities:
           - Write lots of example codes.
-          - Read lots of examples.
-          - See lots of example videos.
+
+  - company:
+      name: T.Rowe Price
+      url: "https://www.troweprice.com"
+      location: Baltimore, MD
+      overview: T. Rowe Price Group is a global investment management firm that offers funds, advisory services, account management, and retirement plans and services for individuals, institutions, and financial intermediaries
+    positions:
+      - designation: Software Engineer
+        start: Oct. 2017
+        end: Oct. 2018
+        responsibilities:
+          - Write lots of example codes.
+
+  - company:
+      name: FINRA (Financial Industry Regulatory Authority)
+      url: "https://www.finra.org"
+      location: Rockville, MD
+      overview:  FINRA is a private corporation that acts as a self-regulatory organization. FINRA is the successor to the National Association of Securities Dealers, Inc. and the member regulation, enforcement, and arbitration operations of the New York Stock Exchange
+    positions:
+      - designation: Software Engineer
+        start: Oct. 2016
+        end: Oct. 2017
+        responsibilities:
+          - Write lots of example codes.
+
+  - company:
+      name: Multiplan
+      url: "https://www.multiplan.com"
+      location: Rockville, MD
+      overview: MultiPlan has pioneered innovative solutions for healthcare payors, drawing on unique insights and data analysis to customize an action plan to help each of our customers thrive. Our roots go back to MultiPlan’s early days as a New York hospital network, and we have grown, adapted and innovated our way to offering the industry’s most comprehensive portfolio of cost management solutions.
+    positions:
+      - designation: Software Engineer
+        start: Aug. 2015
+        end: Oct. 2018
+        responsibilities:
+          - Write lots of example codes.
