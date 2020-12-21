@@ -1,13 +1,12 @@
 ---
-title: "Analytics and Comments"
+title: "First level test"
 date: 2020-06-08T06:00:23+06:00
-hero: /images/posts/writing-posts/analytics.svg
 description: Adding analytics and disquss comment in hugo theme Toha
 menu:
     sidebar:
-        name: Analytics & Comments
+        name: First Level
         identifier: analytics-and-comments
         weight: 500
 ---
 
-### Complete Post Coming Soon...
+### Testing...
