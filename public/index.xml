@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shubo Zhang</title>
+    <link>https://shubozhang.github.io/</link>
+    <description>Recent content on Shubo Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://shubozhang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Use MySQL count</title>
+      <link>https://shubozhang.github.io/posts/db/mysql-count/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/db/mysql-count/</guid>
+      <description>How many ways to use count?  count(*): returns a count of the number of all rows (including NULL). count(1): 1 evaludates to non-NULL for every row, so it returns the same results as count(*) count(col_name): returns a count of the number of the rows that col_name is not NULL  count(col_name) VS count(*)？  count(*): returns a count of the number of all rows (including NULL). count(col_name): returns a count of the number of the rows that col_name is not NULL count(*) is recommended even though count(pk) can return the same result.</description>
+    </item>
+    
+    <item>
+      <title>Three ways to log S3 Bucket Activities</title>
+      <link>https://shubozhang.github.io/posts/aws/3-ways-to-log-s3/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/aws/3-ways-to-log-s3/</guid>
+      <description>Enable Server Access Logging for an S3 Bucket. It is one of the S3 bucket properties. You just need to select a target bucket and prefix to complete the setup. The details are available here: https://docs.aws.amazon.com/AmazonS3/latest/user-guide/server-access-logging.html
+ Pros:  less infrastructure no code involved easy to search log for a specific bucket.   Cons:  the target bucket must be in public ip which is a deal breaker sometimes. no UI.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Samples</title>
+      <link>https://shubozhang.github.io/posts/markdown-sample/</link>
+      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/markdown-sample/</guid>
+      <description>This is a sample post intended to test the followings:
+ A different post author. Table of contents. Markdown content rendering. Math rendering. Emoji rendering.   Markdown Syntax Rendering Headings The following HTML &amp;lt;h1&amp;gt;—&amp;lt;h6&amp;gt; elements represent six levels of section headings. &amp;lt;h1&amp;gt; is the highest section level while &amp;lt;h6&amp;gt; is the lowest.
+H1 H2 H3 H4 H5 H6 Paragraph Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://shubozhang.github.io/posts/category/sub-category/rich-content/</link>
+      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/category/sub-category/rich-content/</guid>
+      <description>This sample post tests the followings:
+ Category, sub-category nesting in the sidebar. Hero image and other images are in images folder inside this post directory. Different media rendering like image, tweet, YouTube video, Vimeo video etc.  Image Sample  Tweet Sample “In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”
+— Jan Tschichold pic.twitter.com/gcv7SrhvJb
+&amp;mdash; Graphic Design History (@DesignReviewed) January 17, 2019   YouTube Video Sample    Vimeo Video Sample   </description>
+    </item>
+    
+    <item>
+      <title>Shortcodes Samples</title>
+      <link>https://shubozhang.github.io/posts/shortcodes/</link>
+      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/shortcodes/</guid>
+      <description>This is a sample post intended to test the followings:
+ Default hero image. Different shortcodes.  Alert The following alerts are available in this theme.
+This is sample alert with type=&amp;quot;success&amp;quot;.  This is sample alert with type=&amp;quot;danger&amp;quot;.  This is sample alert with type=&amp;quot;warning&amp;quot;.  This is sample alert with type=&amp;quot;info&amp;quot;.  This is sample alert with type=&amp;quot;dark&amp;quot;.  This is sample alert with type=&amp;quot;primary&amp;quot;.  This is sample alert with type=&amp;quot;secondary&amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>First level test</title>
+      <link>https://shubozhang.github.io/posts/analytics-and-comments/</link>
+      <pubDate>Mon, 08 Jun 2020 06:00:23 +0600</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/analytics-and-comments/</guid>
+      <description>Testing&amp;hellip; </description>
+    </item>
+    
+  </channel>
+</rss>
