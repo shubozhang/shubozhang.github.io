@@ -1,11 +1,16 @@
+---
+title: "Sonarqube setup"
+date: 2021-02-15
+hero: /images/posts/sonarqube.svg
+menu:
+    sidebar:
+        name: Sonarqube
+        identifier: sonarqube
+        parent: tools
+        weight: 10
+---
 
-
-
-
-
-
-
-# Sonarqube
+## Sonarqube
 
 
 ```bash
