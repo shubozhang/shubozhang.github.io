@@ -45,6 +45,8 @@ Params:
   # GitHub repo URL of my site
   gitRepo: https://github.com/shubozhang/shubozhang.github.io
 
+  GitBranch: source
+
   # specify whether I want to write some blog posts or not
   enableBlogPost: true
 
