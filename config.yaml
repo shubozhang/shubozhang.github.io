@@ -4,6 +4,11 @@ title: Shubo Zhang
 theme: "toha"
 
 
+languages:
+  en:
+    languageName: English
+    weight: 1
+
 # Allow raw html in markdown file
 markup:
   goldmark:
@@ -32,15 +37,15 @@ Params:
   description: Shubo Zhang site for hugo theme Toha.
 
   # Background image of the landing page
-  background: "images/site/programming-world-map.png"
+  background: "/images/site/programming-world-map.png"
 
   # Provide logos for my site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.
   # It will default to the theme logos if not provided.
   logo:
-    main: images/logos/toha.png
-    inverted: images/logos/logo-inverted.png
-    favicon: images/logos/favicon.png
+    main: /images/site/main-logo.png
+    inverted: /images/site/inverted-logo.png
+    favicon: /images/site/favicon.png
 
   # GitHub repo URL of my site
   gitRepo: https://github.com/shubozhang/shubozhang.github.io

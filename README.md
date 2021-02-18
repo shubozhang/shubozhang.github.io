@@ -11,3 +11,6 @@ hugo server
 ```bash
 ./publish.sh
 ```
+
+### Update Toha theme (submodule)
+`git submodule update --remote`
