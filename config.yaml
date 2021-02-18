@@ -3,11 +3,11 @@ languageCode: en-us
 title: Shubo Zhang
 theme: "toha"
 
-
-languages:
-  en:
-    languageName: English
-    weight: 1
+#
+#languages:
+#  en:
+#    languageName: English
+#    weight: 1
 
 # Allow raw html in markdown file
 markup:
