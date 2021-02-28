@@ -3,11 +3,11 @@ languageCode: en-us
 title: Shubo Zhang
 theme: "toha"
 
-#
-#languages:
-#  en:
-#    languageName: English
-#    weight: 1
+
+languages:
+  en:
+    languageName: English
+    weight: 1
 
 # Allow raw html in markdown file
 markup:
@@ -57,12 +57,6 @@ Params:
 
   # specify whether I want to show Table of Contents in reading page
   enableTOC: true
-
-  # specify the list of custom menus that I want to show in the top navbar.
-  # they will be separated by a divider from the main menus.
-#   customMenus:
-#   - name: Notes
-#     url: https://hossainemruz.gitbook.io/notes/
 
   # Provide newsletter configuration. This feature hasn't been implemented yet.
   # Currently, I can just hide it from the footer.

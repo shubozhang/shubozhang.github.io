@@ -1,7 +1,7 @@
 ---
 title: "Three ways to log S3 Bucket Activities"
 date: 2020-12-20
-hero: images/posts/s3-logo.svg
+hero: hero.svg
 menu:
     sidebar:
         name: Three ways to log S3 Bucket Activities
@@ -10,8 +10,13 @@ menu:
         weight: 10
 ---
 
-## Enable Server Access Logging for an S3 Bucket.
-It is one of the S3 bucket properties. You just need to select a target bucket and prefix to complete the setup. 
+A common requirement is to monitor S3 bucket activities, especially for the purpose of auditing. In this blog, I will introduce
+three ways to implement this feature.
+
+![Alt text](/images/posts/aws/s3-logo.png)
+
+### 1. Use S3 properties
+Enable Server Access Logging for an S3 Bucket. It is one of the S3 bucket properties. You just need to select a target bucket and prefix to complete the setup. 
 The details are available here: https://docs.aws.amazon.com/AmazonS3/latest/user-guide/server-access-logging.html
 * Pros: 
     * less infrastructure
@@ -21,7 +26,8 @@ The details are available here: https://docs.aws.amazon.com/AmazonS3/latest/user
     * the target bucket must be in public ip which is a deal breaker sometimes. 
     * no UI.
 
-## Use CloudTrail to create a trail to monitor S3 bucket.
+### 2. Use CloudTrail
+Use CloudTrail to create a trail to monitor S3 bucket.
 * Pros:
     * less infrastructure 
     * no code involved
@@ -31,7 +37,8 @@ The details are available here: https://docs.aws.amazon.com/AmazonS3/latest/user
     * when monitoring multiple buckets, it is not easy to search a specific bucket log since there is no prefix setup 
 for each source bucket.
 
-## Use Lambda to capture S3 bucket events.
+### 3. Use Lambda
+Use Lambda to capture S3 bucket events.
 * Pros:
     * easy customized search
     * works for both private and public for target bucket
