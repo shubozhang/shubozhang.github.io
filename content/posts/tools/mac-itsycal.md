@@ -4,8 +4,8 @@ date: 2021-02-15
 hero: hero.svg
 menu:
     sidebar:
-        name: itsycal
-        identifier: itsycal
+        name: mac-itsycal
+        identifier: mac-itsycal
         parent: tools
         weight: 10
 ---
