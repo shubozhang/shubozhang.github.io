@@ -20,6 +20,8 @@ menu:
 * 效果图
     ![Alt text](/images/posts/tools/itsycal.png)
 
+
+### 特点
 我用了2年左右，感觉基本功能还是很实用
 * 可以高亮周末
 * 可以设置周一为第一天，方便查看
