@@ -6,6 +6,6 @@ description: Portfolio and personal blog of Shubo Zhang.
 
 # specify the list of custom menus that I want to show in the top navbar.
 # they will be separated by a divider from the main menus.
-customMenus:
-  - name: Gitbooks
-    url: https://shubozhang.github.io/gitbooks/
+#customMenus:
+#  - name: Gitbooks
+#    url: https://shubozhang.github.io/gitbooks/
