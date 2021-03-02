@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Micronaut on Shubo Zhang</title><link>https://shubozhang.github.io/posts/micronaut/</link><description>Recent content in Micronaut on Shubo Zhang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shubozhang.github.io/posts/micronaut/index.xml" rel="self" type="application/rss+xml"/><item><title>Micronaut + GraalVM 是不是真的香</title><link>https://shubozhang.github.io/posts/micronaut/mn-graalvm/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://shubozhang.github.io/posts/micronaut/mn-graalvm/</guid><description>微服务规模大了以后，传统build 的docker image就显得非常臃肿，启动慢，体积大，非常不利于scale， 资源消耗也大。一般提高方法就是使用轻量级模块注入，用什么，加什么， 而不用大的框架，像Spring， Spring boot就 非常不推荐在为服务使用。。。
-经过上面优化，性能还是在一个数量级变化， 因为base image还是openjdk，依赖注入，反射，注解之类 还是会降低启动速度。
+经过上面优化，性能好一些，但没啥惊人变化， 因为base image还是openjdk，依赖注入，反射，注解之类 还是会降低启动速度。
 GraalVM （https://www.graalvm.org/）
 GraalVM作为一款新型通用的虚拟机，不废话，单刀直入
 AOT(ahead-of-time)编译就是为了快速启动和低内存消耗。官方列的其他优点：
-高效 AOT 编译 （快速启动） 多语言 高级工具（调试，监控，profile等等） 后两项还有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有什么问题。高级工具这些，公司有统一的stack，也不准备用。
+高效 AOT 编译 （快速启动） 多语言 高级工具（调试，监控，profile等等） 后两项还没有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有什么问题。高级工具这些，公司有统一的stack，也不准备用。
 Micronaut （https://github.com/micronaut-projects/micronaut-core）
 Micronaut是一款现代, 基于JVM的全栈Java框架，适用于模块化搭建，易于测试的JVM应用，支持Java, Kotlin和Groovy. 它提供了编译时的依赖注入和AOP处理能力，并最小化反射和动态代理的使用。它应用有着更快的启动速度和更低的内存占用。
 Micronaut + GraalVM （POC） 用Micronaut template创建一个App
