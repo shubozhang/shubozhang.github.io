@@ -30,7 +30,7 @@ AOT(ahead-of-time)编译就是为了快速启动和低内存消耗。官方列�
 * 多语言
 * 高级工具（调试，监控，profile等等）
 
-后两项还没有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有什么问题。高级工具这些，公司有统一的stack，也不准备用。
+后两项还没有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有语言问题。高级工具这些，公司有统一的stack，也不准备用。
 
 
 ### Micronaut
@@ -102,6 +102,7 @@ ENTRYPOINT ["/app/mn-graalvm"]
 
 提示，这个过程比较消耗时间和资源，分配给docker6～8GB内存，否则容易报错
 
+### 结果
 
 ##### 启动时间比较
 * GraalVM原生 (32 ms)
