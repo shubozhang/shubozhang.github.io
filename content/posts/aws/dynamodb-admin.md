@@ -286,7 +286,7 @@ DynamoDB一直被人诟病没有好的query tool，查询数据很麻烦，到�
    public class MusicController {
        private static final Logger log = LoggerFactory.getLogger(MusicController.class);
        @Inject
-       static MusicDao musicDao;
+       MusicDao musicDao;
        @Inject
        ObjectMapper mapper;
        
