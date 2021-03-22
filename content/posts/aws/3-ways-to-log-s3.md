@@ -1,7 +1,7 @@
 ---
 title: "Three ways to log S3 Bucket Activities"
 date: 2020-12-20
-hero: hero.svg
+hero: /images/posts/aws/3-ways-to-log-s3/s3-logo.svg
 menu:
     sidebar:
         name: Three ways to log S3 Bucket Activities
