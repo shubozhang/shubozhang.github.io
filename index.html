@@ -30,14 +30,12 @@ docker-compose.yml file
 version: '3.8'services: dynamodb-local: command: "-jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath ./data" image: "amazon/dynamodb-local:latest" container_name: dynamodb-local ports: - "8000:8000" volumes: - "./docker/dynamodb:/home/dynamodblocal/data" working_dir: /home/dynamodblocalRun docker-compose.yml file
 docker-compose up -d 启动dynamodb-admin
 MacOS： dynamodb-admin // 或者定义region和credentials AWS_REGION=eu-west-1 AWS_ACCESS_KEY_ID=local AWS_SECRET_ACCESS_KEY=local dynamodb-admin Windows: export DYNAMO_ENDPOINT=http://localhost:8000 dynamodb-admin 完成</p></div><div class=card-footer><span class=float-left>March 16, 2021</span>
-<a href=/posts/aws/dynamodb-admin/ class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/micronaut/mn-graalvm/ class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/default-hero.jpg alt="Card image cap"></div><div class=card-body><h5 class=card-title>Micronaut + GraalVM 是不是真的香</h5><p class="card-text post-summary">微服务规模大了以后，传统build 的docker image就显得非常臃肿，启动慢，体积大，非常不利于scale， 资源消耗也大。一般提高方法就是使用轻量级模块注入，用什么，加什么， 而不用大的框架，像Spring， Spring boot就 非常不推荐在为服务使用。。。
-经过上面优化，性能好一些，但没啥惊人变化， 因为base image还是openjdk，依赖注入，反射，注解之类 还是会降低启动速度。
-GraalVM （https://www.graalvm.org/）
-GraalVM作为一款新型通用的虚拟机，不废话，单刀直入
-AOT(ahead-of-time)编译就是为了快速启动和低内存消耗。官方列的其他优点：
-高效 AOT 编译 （快速启动） 多语言 高级工具（调试，监控，profile等等） 后两项还没有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有语言问题。高级工具这些，公司有统一的stack，也不准备用。
-Micronaut （https://github.com/micronaut-projects/micronaut-core）
-Micronaut是一款现代, 基于JVM的全栈Java框架，适用于模块化搭建，易于测试的JVM应用，支持Java, Kotlin和Groovy. 它提供了编译时的依赖注入和AOP处理能力，并最小化反射和动态代理的使用。它应用有着更快的启动速度和更低的内存占用。
+<a href=/posts/aws/dynamodb-admin/ class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/micronaut/mn-graalvm/ class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/default-hero.jpg alt="Card image cap"></div><div class=card-body><h5 class=card-title>Micronaut + GraalVM 是不是真的香</h5><p class="card-text post-summary">微服务规模大了以后，传统build 的docker image就显得非常臃肿，启动慢，体积大，非常不利于scale， 资源消耗也大。一般提高方法就是使用轻量级模块注入，用什么，加什么， 并且不用大的框架，像Spring， Spring boot就 非常不推荐在为服务使用。。。
+经过上面优化，性能会好一些，但没啥惊人变化， 因为base image还是openjdk，依赖注入，反射，注解之类 还是会降低启动速度。
+GraalVM（https://www.graalvm.org/） GraalVM作为一款新型通用的虚拟机，不废话，单刀直入解决问题，启动快50倍，内存消耗少5倍。
+为啥它这么牛，因为它用AOT(ahead-of-time)编译，可以快速启动和低内存消耗。官方列的优点：
+高效 AOT 编译 （快速启动） 多语言 高级工具（调试，监控，profile等等） 后两项还没有特别感觉，因为公司后台主要用Java/Kotlin/Grrovy，没有多语言问题。高级工具这些，公司有统一的stack，也不准备用。
+Micronaut（https://github.com/micronaut-projects/micronaut-core） Micronaut是一款现代, 基于JVM的全栈Java框架，适用于模块化搭建，易于测试的JVM应用，支持Java, Kotlin和Groovy. 它提供了编译时的依赖注入和AOP处理能力，并最小化反射和动态代理的使用。它应用有着更快的启动速度和更低的内存占用。
 Micronaut + GraalVM （POC） 用Micronaut template创建一个App
 version: 2.3.3 language: Java 11 build: gradle test: jUnit feature： netty-server 创建一个简单的API
 @Controller("/hello") public class HelloController { @Get("/") public String index() { return "hello from Micronaut + GraalVM"; } } 添加lib到build.</p></div><div class=card-footer><span class=float-left>March 1, 2021</span>
