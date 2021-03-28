@@ -4,7 +4,7 @@ date: 2020-12-20
 hero: /images/posts/aws/3-ways-to-log-s3/s3-logo.svg
 menu:
     sidebar:
-        name: Three ways to log S3 Bucket Activities
+        name: S3-log
         identifier: aws-s3-log
         parent: aws
         weight: 10
