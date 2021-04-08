@@ -1,5 +1,5 @@
 ---
-title: "OWASP 十大网站安全风险 （一）： 注入"
+title: "OWASP 十大网站安全风险 （一）： 注入攻击"
 date: 2021-04-07
 hero: /images/posts/pg.svg
 menu:
