@@ -4,7 +4,7 @@ date: 2021-04-09
 hero: /images/posts/pg.svg
 menu:
     sidebar:
-        name: owasp-1-broken-authentication
+        name: owasp-2-broken-authentication
         identifier: owasp-2
         parent: tools
         weight: 10
