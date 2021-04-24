@@ -1,13 +1,13 @@
 ---
 title: "Three ways to log S3 Bucket Activities"
 date: 2020-12-20
-hero: /images/posts/aws/3-ways-to-log-s3/s3-logo.svg
 menu:
     sidebar:
         name: S3-log
         identifier: aws-s3-log
         parent: aws
         weight: 10
+hero: s3-logo.png
 ---
 
 A common requirement is to monitor S3 bucket activities, especially for the purpose of auditing. In this blog, I will introduce

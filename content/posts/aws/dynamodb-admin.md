@@ -1,7 +1,7 @@
 ---
 title: "介绍一个本地DynamoDB图形界面应用: dynamodb-admin"
 date: 2021-03-16
-hero: hero.svg
+hero: images/posts/aws/dynamodb-admin/tables.png
 menu:
     sidebar:
         name: dynamodb-admin
