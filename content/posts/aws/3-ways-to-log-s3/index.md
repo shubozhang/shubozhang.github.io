@@ -7,13 +7,12 @@ menu:
         identifier: aws-s3-log
         parent: aws
         weight: 10
-hero: s3-logo.png
+hero: s3-logo.svg
 ---
 
 A common requirement is to monitor S3 bucket activities, especially for the purpose of auditing. In this blog, I will introduce
 three ways to implement this feature.
 
-![Alt text](/images/posts/aws/s3-logo.png)
 
 ### 1. Use S3 properties
 Enable Server Access Logging for an S3 Bucket. It is one of the S3 bucket properties. You just need to select a target bucket and prefix to complete the setup. 

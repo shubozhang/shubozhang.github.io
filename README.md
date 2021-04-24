@@ -17,6 +17,7 @@ hugo server
 ## Update Toha theme (submodule)
 `git submodule update --remote`
 
+`cd themes/toha; git pull git@github.com:hugo-toha/toha.git main`
 
 ## Troubleshooting
 * Theme issue: https://github.com/hugo-toha/toha/issues
