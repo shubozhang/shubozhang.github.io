@@ -24,122 +24,64 @@ menu:
 
 
 ## 敏感信息泄漏
-Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare,
-and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity
-theft, or other crimes. Sensitive data may be compromised without extra protection, such as
-encryption at rest or in transit, and requires special precautions when exchanged with the browser.
+
+许多网站和API没能很好的保护敏感信息，像金融，医疗，个人信息等等。攻击者可以通过窃取，篡改这些数据来进行信用卡诈骗，身份盗用，和
+其他犯罪。敏感信息泄漏大多由于没有额外数据加密保护，像是没有在服务器端和传输过程中做加密保护，尤其是在和浏览器交换数据的过程。
 
 ## 了解敏感信息泄漏
-Sensitive data pii personally identifiable information,  PHI personal health information and an entire gamut of proprietary data
 
-must be protected in all applications.
+在过去几年，敏感信息泄漏在网络安全中造成的最严重的影响。最常见的安全疏失就是没有加密，或者没有按照安全准则加密敏感信息。像是在密钥的产生和管理，
+使用不安全算法，协议，网络等等，尤其是使用弱哈希密码加密存储数据。
 
+敏感信息泄漏的威胁可能来自外部和内部。外部攻击者往往不会直接暴力解密，而是会在数据传输，与客户浏览器交互的过程中拦截，窃取明文， 然后对加密
+系统攻击。内部威胁主要是有些员工运用权限漏洞直接下载敏感数据，如果数据只是在服务器端加密，没有多层加密的话，下载过程数据会自动解密，员工就拿到的
+敏感信息的明文。
 
-What do you need to know?
+敏感信息一般包括个人身份确认信息，医疗资料，密码，私人信息，信用卡，还有一些法律要求管制的数据等等。 敏感信息泄漏不仅仅关乎经济，信用损失，还有伴随的法律责任。
+所以对于敏感信息，要求在存储和传输的过程中都要额外加密保护。至少要考虑下面的具体问题：
 
-Consider who can gain access to your sensitive data, and any backups of that data. This includes the data at rest,
-in transit, and even in your customers browsers.  Include both external and internal threats.
+* 数据传输过程中是否使用了非加密，非安全的协议， 像http, SMTP, 和 ftp
 
+* 外部网络数据传输过程中是否一直是加密的，例如负平衡和应用前后台间的数据传输
 
-Rather than directly attacking crypto, attackers steel keys execute man-in-the-middle attacks or steel clear text data
-off the server while in transit or from the users client, like a browser.
+* 敏感数据是否有备份
 
+* 加密算法是否符合最近的安全标准，代码中是否有使用太老或者弱的加密算法
 
-A manual attack is generally required. Previously retrieved password database, this could be forced by graphics processing units, gpus.
+* 是否使用了默认加密算法，是否使用了弱的密钥，是否重用的密钥，是否有定期翻转密钥
 
+* 与客户端数据交互的时候，是否强制使用安全加密通信
 
-Over the last few years, this has been the most common impactful attack.
-
-The most common flaw is simply not encrypting sensitive data. When crypto is employed, week key generation and management,
-as well as weak algorithm, protocol ,and cyber usage is common, particularly for weak password hashing storage techniques.
-
-For data in transit, server side weaknesses are mainly easy to detect, but hard for data at rest.
-
-
-Failure frequently compromises all data that should have been protected. Typically, this information, including sensitive
-personally identifiable information data (PPI), such as health records, credentials, personal data, and credit cards,
-which often require protection as defined by laws or regulations, such as the EU GDPR or local privacy laws.
-
-
-Consider the business value of the lost data and the impact or possible damage to your reputation.
-
-What is your legal liability that this data is exposed?
-
-
-The first thing you have to determine is which data is sensitive enough to require extra protection both in transit and at rest.
-
-
-For examples, passwords, credit card numbers, health records, personal information, and business secrets require extra protection.
-
-
-Particularly if that data falls under privacy laws or regulations, like EU's general data protection regulation gdpr, or
-regulations for financial data protection, such as pci data security standard (pci DSS).
-
-
-For all such data, is any data transmitted in clear text, this concerns protocols, such as http, SMTP, and ftp.
-
-External internet traffic is especially dangerous, verifying all internal traffic between load balancers, web servers or back end systems.
-
-
-Is sensitive data stored in clear text, including backups?
-Are any old or weak cryptographic algorithms use either by default or in older code?
-
-Are default crypto keys in use, weak crypto keys generated or re-used, or is proper key management for rotation missing?
-
-Is encryption not enforced? Are any user agent browser security directives or headers missing?
-
-Does user agent(like app, mail client) not verify if the received server certificate is valid?
-
-Is the data included as plain text and application or server logs?
+* 敏感信息有没有明文暴露在应用中， 或者日志中
 
 ## 案例
 
-##### scenario one
+##### 案例一
+一个应用使用数据库自动加密工具去加密信用卡号。当发生SQL注入攻击时候，数据库会自动解密数据，这样攻击者会直接得到信用卡号明文。
 
-An application encrypts credit card numbers in a database using automatic database encryption. However, this data is
-automatically decrypted when retrieved allowing a sequel injection flaw can retrieve credit card numbers in clear text.
+##### 案列二
+网站不强制要求使用TLS，并且支持弱的加密通信。在非安全的网络环境中，攻击者把https降级到http，通过拦截，窃取用户session令牌
+完成盗用其他用户信息，进行违法行为。
 
-
-##### scenario two
-the site doesn't use or enforce TLS for all pages or supports weak encryption. An attacker monitors network
-traffic(as at an insecure wireless network) downgrades connections from https to http, intercepts requests,
-and steals the users' session cookie.
-
-
-The attacker then replays this cookie and hijacks the users authenticated session, accessing or modifying the users' private data.
-Instead of above, they could alter all transported data, like the recipient of a money transfer
-
-##### scenario three.
-
-The password database and uses unsalted or simple hashes to store everyone's passwords. A file upload flaw allows an attacker to
-retrieve the password database.  All the unsalted hashes can be exposed with the Rainbow table
-of pre-calculated hashes.  Hashes generated by simple or fast hash functions may be crackered by GPUs, even if they were
-salted.
-
+##### 案例三
+存储密码的数据库使用非加盐的哈希码。一旦攻击者获得了这些数据，非加盐的哈希码可以通过彩虹表破解的。 对于一些简单快速生成的哈希码，即使是加盐的，
+也可能通过GPUs进行暴力破解的。
 
 ## 预防
-all sensitive data to all of the following and then.
+除了以上提到的问题和案例，还要注意以下方面：
 
+* 敏感信息通过应用进行单独保存，处理，传输，防止内部人为下载数据
 
-1. classify data processed, stored,  or transmitted by an application. Identify which data is sensitive according to privacy
-   laws, regulatory requirements, or business needs.
+* 设置敏感信息访问权限，并且时时监控访问
+  
+* 非必要情况，不要存储敏感数据
+  
+* 即使清除过了保存时限的敏感数据
 
+* 保证敏感数据在服务器端加密。保证使用最新的安全加密算法，协议，密钥保护，密钥翻转
 
-2. Apply controls as proposed application.
-   Don't store sensitive data unnecessarily. Discard it as soon as possible or use
-   PCI DSS compliant tokenization or even truncation.  Data that is not retained cannot be stolen.
+* 保证敏感数据在传输过程中使用安全通信协议，像TLS加前向保密性（perfect forward secrecyPFS）, 强制使用HTTP严格传输安全（http strict transport security
 
-
-3. Make sure to encrypt all sensitive data at rest.  Ensure up-to-date and strong standard algorithms, protocols, and keys are
-   in place; use property key management.
-
-
-4. Encrypt all data in transit with secure protocols, such as TLS with perfect forward secrecy(PFS) ciphers, cipher prioritization
-   by server, and secure parameters.  Enforce encryption using directives like http strict transport security(HSTS).
-
-
-5. disable caching for responses that contain sensitive data.  
-   Store passwords using a strong adaptive and salted hashing function with a work factor(delay factor), such as Argon2, scrypt,
-   bcrypt, or PBKDF2.
-
-6. Verify independently the effectiveness of configuration and settings.
+* 禁止缓存含有敏感数据的响应
+   
+* 使用强加盐密码哈希加work-factor(delay factor), 像 Argon2, scrypt, bcrypt, 和 PBKDF2 等等
