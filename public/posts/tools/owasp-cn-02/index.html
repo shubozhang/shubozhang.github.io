@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OWASP 十大网站安全风险 （二）：无效身份认证</title>
+    
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/style.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/images/site/favicon_hu8376fd15465fef26ffe66b6bcf0ca686_13669_42x0_resize_box_2.png" />
+
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+    
+<meta name="description" content="OWASP 十大网站安全风险 （二）：无效身份认证" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/images/site/main-logo_hu864bbe108f1be1ae04b57f7f2fd9d631_5637_42x0_resize_box_2.png">Shubo Zhang</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/site/main-logo_hu864bbe108f1be1ae04b57f7f2fd9d631_5637_42x0_resize_box_2.png" class="d-none" id="main-logo">
+  <img src="/images/site/inverted-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_42x0_resize_box_2.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/aws/">AWS</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/aws/dynamodb-acid/">dynamodb-acid</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/aws/dynamodb-admin/">dynamodb-admin</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/aws/3-ways-to-log-s3/">S3-log</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/db/">DB</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/db/mysql-count/">How to Use MySQL count</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/micronaut/">micronaut</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/micronaut/mn-graalvm/">mn-graalvm</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/software-design-and-engineering/">Software Design and Engineering</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/software-design-and-engineering/clean-code/">Clean Code</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/software-design-and-engineering/clean-code/meaningful-names/">Meaningful Names</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/tools/">Tools</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/mac-itsycal/">mac-itsycal</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/mac-stats/">mac-stats</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/mac-world-time/">mac-world-time</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/owasp-cn-01/">owasp-1-sql-injection</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/tools/owasp-cn-02/">owasp-2-broken-authentication</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/owasp-cn-03/">owasp-3-sensitive-data-exposure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tools/pg12/">Postgres 12 &#43; pgadmin in Docker</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://shubozhang.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/site/shubo_zhang.jpg'/>
+          <h5 class="author-name">Shubo Zhang</h5>
+          <p>April 9, 2021</p>
+        </div>
+
+        <div class="title">
+          <h1>OWASP 十大网站安全风险 （二）：无效身份认证</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <h2 id="owasp-十大信息安全主题">OWASP 十大信息安全主题</h2>
+<blockquote>
+<ol>
+<li>注入攻击 （Injection）</li>
+<li><strong>无效身份认证（Broken Authentication）</strong></li>
+<li>敏感信息泄漏（Sensitive Data Exposure）</li>
+<li>XML外部处理器漏洞（XML External Entities (XXE)）</li>
+<li>无效存取控管（Broken Access Control）</li>
+<li>错误设置安全系统（Security Misconfiguration）</li>
+<li>跨站攻击（Cross-Site Scripting (XSS)）</li>
+<li>不安全的反序列化漏洞（Insecure Deserialization）</li>
+<li>使用已有漏洞元件（Using Components with Known Vulnerabilities）</li>
+<li>日志和监控不足风险（Insufficient Logging and Monitoring）</li>
+</ol>
+</blockquote>
+<h2 id="无效身份认证">无效身份认证</h2>
+<p>程序开发中，既要保证安全，又要有好的用户体验，身份认证，授权，和session管理很容易出现错误漏洞，攻击者可以利用这些漏洞来穿透认证检查，从而可以临时或者永久的使用其他人的账户。</p>
+<h2 id="了解无效身份认证">了解无效身份认证</h2>
+<p>对于需要保存状态的应用程序，身份认证，授权，session管理等的设计和执行很容易出现漏洞。尤其是session管理，它是身份认证，授权等的基石，攻击者大多
+会对过期令牌进行攻击。</p>
+<p>攻击者有海量的有效用户名和密码组合，这些数据可以使用在</p>
+<ul>
+<li>
+<p>撞库攻击（credential stuffing attack）</p>
+</li>
+<li>
+<p>默认管理员账户列表</p>
+</li>
+<li>
+<p>自动暴力破解</p>
+</li>
+<li>
+<p>字典攻击工具</p>
+</li>
+</ul>
+<p>攻击者能通过以上手段发现无效身份认证漏洞， 一般来说，攻击者只需要几个账户，或者一个管理员账户，就能侵入，破坏系统，这样可能会造成很严重的后果，例如
+洗钱，盗窃身份，重要敏感信息泄漏 等等。</p>
+<h2 id="什么情况容易被攻击">什么情况容易被攻击</h2>
+<ul>
+<li>
+<p>允许撞库攻击</p>
+</li>
+<li>
+<p>允许暴力破解</p>
+</li>
+<li>
+<p>允许默认或者非常弱的密码，例如 &ldquo;Password1&rdquo; 和 &ldquo;admin/admin&rdquo;</p>
+</li>
+<li>
+<p>在密码恢复时，使用没有保护力的问题认证， 例如使用常识知识类的问题</p>
+</li>
+<li>
+<p>使用简单，弱的加密密码，例如Base64</p>
+</li>
+<li>
+<p>没有使用多重要素认证（MFA）</p>
+</li>
+<li>
+<p>在URL中暴露session IDs</p>
+</li>
+<li>
+<p>登陆成功后没有更新session令牌</p>
+</li>
+<li>
+<p>在退出登陆后，或者用户一段时间没有活动时，没有及时使session或者授权令牌失效，尤其是单点登陆系统</p>
+</li>
+</ul>
+<h2 id="案例">案例</h2>
+<h5 id="案例一-撞库攻击来自百度百科">案例一 撞库攻击（来自百度百科）</h5>
+<p>很多用户在不同网站使用的是相同的帐号密码，因此黑客可以通过获取用户在A网站的账户从而尝试登录B网址，这就可以理解为撞库攻击。
+撞库可采用大数据安全技术来防护，比如：用数据资产梳理发现敏感数据，使用数据库加密保护核心数据，使用数据库安全运维防运维人员撞库攻击等。</p>
+<h5 id="案例二-授权认证攻击">案例二 授权认证攻击</h5>
+<p>曾经流行的密码最佳实践是定期更换密码，并且要求一定的复杂度。这个实践导致一些用户重复使用，或者使用固定模式的弱密码。NIST 800-63建议
+停止使用上面的最佳实践，改用多重要素授权认证。</p>
+<h5 id="案例三-session攻击">案例三 session攻击</h5>
+<p>应用程序的session timeouts设置不合理. 例如，一个用户在公共计算机上登陆一个系统，使用后，没有退出，而是关闭了浏览器然后离开了。
+这样攻击者可以在这位用户之后使用这台计算机中的同一个浏览器，用户的授权仍然是有效的。</p>
+<h2 id="预防">预防</h2>
+<p>首先要避免上面容易被攻击的情况。下面是一些具体措施</p>
+<ul>
+<li>
+<p>尽量使用多重要素认证（multi-factor authentication）， 它可以预防</p>
+<ul>
+<li>机器登陆</li>
+<li>撞库攻击</li>
+<li>暴力破解</li>
+<li>重用丢失密码攻击</li>
+</ul>
+</li>
+<li>
+<p>在部署过程中不要使用默认密码，尤其是管理员用户</p>
+</li>
+<li>
+<p>对密码进行强弱验证，例如测试最差的一万个密码列表</p>
+</li>
+<li>
+<p>遵循NIST 800-63指导原则，对密码长度，复杂度，更新频率制定计划</p>
+</li>
+<li>
+<p>在注册，密码登陆，密码恢复等功能中要防止枚举攻击，保证对所有错误尝试返回同样的错误信息</p>
+</li>
+<li>
+<p>限制登陆尝试次数，监控短时间内密集登陆错误，及时警报给管理员</p>
+</li>
+<li>
+<p>使用服务器端的session管理，用户登陆后，产生一个高熵的随机数作为session ID，这个ID不能出现在URL里面，应该被安全的保存，并且在用户退出登陆，
+空闲无活动， 或者超时的时候，注销session ID</p>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/shubozhang/shubozhang.github.io/edit/source/content/posts/tools/owasp-cn-02.md">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/tools/owasp-cn-03/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>OWASP 十大网站安全风险 （三）：敏感信息泄漏</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/tools/owasp-cn-01/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>OWASP 十大网站安全风险 （一）： 注入攻击</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "shubozhang";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#owasp-十大信息安全主题">OWASP 十大信息安全主题</a></li>
+    <li><a href="#无效身份认证">无效身份认证</a></li>
+    <li><a href="#了解无效身份认证">了解无效身份认证</a></li>
+    <li><a href="#什么情况容易被攻击">什么情况容易被攻击</a></li>
+    <li><a href="#案例">案例</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#案例一-撞库攻击来自百度百科">案例一 撞库攻击（来自百度百科）</a></li>
+                <li><a href="#案例二-授权认证攻击">案例二 授权认证攻击</a></li>
+                <li><a href="#案例三-session攻击">案例三 session攻击</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#预防">预防</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+
+  
+
+
+
+
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#about">About Me</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#skills">Skills</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#experiences">Experiences</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#projects">Projects</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+              </li>
+            
+            
+              
+              
+                
+              
+              <li class="nav-item">
+                <a class="smooth-scroll" href="#achievements">Achievements</a>
+              </li>
+            
+        </ul>
+        
+
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact me:</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>shubozhang@outlook.com</span></li>
+          
+          <li><span>Phone: </span> <span>&#43;0123456789</span></li>
+          
+        </ul>
+      </div>
+      
+      
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We&#39;ll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by
+        <img
+          src="/images/hugo-logo.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/js/navbar.js"></script>
+<script src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

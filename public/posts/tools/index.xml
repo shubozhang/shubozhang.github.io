@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Shubo Zhang</title>
+    <link>https://shubozhang.github.io/posts/tools/</link>
+    <description>Recent content in Tools on Shubo Zhang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shubozhang.github.io/posts/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OWASP 十大网站安全风险 （三）：敏感信息泄漏</title>
+      <link>https://shubozhang.github.io/posts/tools/owasp-cn-03/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/owasp-cn-03/</guid>
+      <description>OWASP 十大信息安全主题   注入攻击 （Injection） 无效身份认证（Broken Authentication 敏感信息泄漏（Sensitive Data Exposure） XML外部处理器漏洞（XML External Entities (XXE)） 无效存取控管（Broken Access Control） 错误设置安全系统（Security Misconfiguration） 跨站攻击（Cross-Site Scripting (XSS)） 不安全的反序列化漏洞（Insecure Deserialization） 使用已有漏洞元件（Using Components with Known Vulnerabilities） 日志和监控不足风险（Insufficient Logging and Monitoring）   敏感信息泄漏 Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes.</description>
+    </item>
+    
+    <item>
+      <title>OWASP 十大网站安全风险 （二）：无效身份认证</title>
+      <link>https://shubozhang.github.io/posts/tools/owasp-cn-02/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/owasp-cn-02/</guid>
+      <description>OWASP 十大信息安全主题   注入攻击 （Injection） 无效身份认证（Broken Authentication） 敏感信息泄漏（Sensitive Data Exposure） XML外部处理器漏洞（XML External Entities (XXE)） 无效存取控管（Broken Access Control） 错误设置安全系统（Security Misconfiguration） 跨站攻击（Cross-Site Scripting (XSS)） 不安全的反序列化漏洞（Insecure Deserialization） 使用已有漏洞元件（Using Components with Known Vulnerabilities） 日志和监控不足风险（Insufficient Logging and Monitoring）   无效身份认证 程序开发中，既要保证安全，又要有好的用户体验，身份认证，授权，和session管理很容易出现错误漏洞，攻击者可以利用这些漏洞来穿透认证检查，从而可以临时或者永久的使用其他人的账户。
+了解无效身份认证 对于需要保存状态的应用程序，身份认证，授权，session管理等的设计和执行很容易出现漏洞。尤其是session管理，它是身份认证，授权等的基石，攻击者大多 会对过期令牌进行攻击。
+攻击者有海量的有效用户名和密码组合，这些数据可以使用在
+  撞库攻击（credential stuffing attack）
+  默认管理员账户列表
+  自动暴力破解
+  字典攻击工具
+  攻击者能通过以上手段发现无效身份认证漏洞， 一般来说，攻击者只需要几个账户，或者一个管理员账户，就能侵入，破坏系统，这样可能会造成很严重的后果，例如 洗钱，盗窃身份，重要敏感信息泄漏 等等。
+什么情况容易被攻击   允许撞库攻击
+  允许暴力破解
+  允许默认或者非常弱的密码，例如 &amp;ldquo;Password1&amp;rdquo; 和 &amp;ldquo;admin/admin&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>OWASP 十大网站安全风险 （一）： 注入攻击</title>
+      <link>https://shubozhang.github.io/posts/tools/owasp-cn-01/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/owasp-cn-01/</guid>
+      <description>OWASP是 open web application security project 的缩写。这个系列主要介绍这十个最多被攻击的安全漏洞。
+OWASP 十大信息安全主题   注入攻击 （Injection） 无效身份认证（Broken Authentication） 敏感信息泄漏（Sensitive Data Exposure） XML外部处理器漏洞（XML External Entities (XXE)） 无效存取控管（Broken Access Control） 错误设置安全系统（Security Misconfiguration） 跨站攻击（Cross-Site Scripting (XSS)） 不安全的反序列化漏洞（Insecure Deserialization） 使用已有漏洞元件（Using Components with Known Vulnerabilities） 日志和监控不足风险（Insufficient Logging and Monitoring）   注入攻击 注入攻击是指在SQL, NoSQL, 系统命令, 和 LDAP等注入时候, 非安全的数据作为命令或者语句传入到解释器中，这些攻击者的 敌对数据可以骗过解释器，在没有授权的情况下执行一些危险命令或者取得数据
+了解注入攻击   首先要考虑到，外部用户， 内部用户， 管理员等都可能给系统发送非安全信息。当攻击者给解释器发送敌对数据的时候，注入 攻击就发生了。
+  注入漏洞是非常普遍的，尤其是老旧系统。 最可能出现的地方包括SQL, LDAP, XPath, OS 命令, XML parsers, smtp headers, Expression languages， ORM语句， OGNL（object graph navigation library）等等.</description>
+    </item>
+    
+    <item>
+      <title>本地Docker安装Postgres 12 &#43; pgadmin （支持Apple M1)</title>
+      <link>https://shubozhang.github.io/posts/tools/pg12/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/pg12/</guid>
+      <description>介绍 项目最近要升级Posgres数据库， 从9.6升级到12+。为了做一些migration测试，我本地要安装几个版本的Postgres，最方便的就是 用Docker安装了，没有版本冲突的问题，好管理，也方便删除。
+另外建议使用docker-compose，或者stack，简单说就是可以data存在本地，这样每次重新启动，数据不会丢，可以重复使用。如果 是做integration testing，则可以每次启动一个新的container。
+下面docker-compose文件里面还有pgAdmin，这样使用Postgres更方便。也可以使用自己喜欢的DB browser，我用IDEA（ultimate） 带的Database plugin。
+支持 Intel CPU 我在MacOS下用了一段时间，没问题。
+ 保存成docker-compose.yml文件 在文件路径下运行 docker-compose up -d  说明：
+ user和password自己随意设置 volumes是本地保存数据库的路径 ports：默认是5432。我一般喜欢改成15432，项目多了，10000下的port很拥挤 pgadmin的email和password是页面登陆密码 pgadmin的volumes和ports跟Postgres性质一样  version: &amp;#39;3.5&amp;#39; services: postgres: container_name: pg12 image: postgres:12 environment: POSTGRES_USER: pg12 POSTGRES_PASSWORD: pg12 PGDATA: /data/postgres volumes: - postgres12:/Users/szhang/postgresql/pg12 ports: - &amp;#34;5432:5432&amp;#34; networks: - pg12 restart: unless-stopped pgadmin: container_name: pgadmin12 image: dpage/pgadmin4 environment: PGADMIN_DEFAULT_EMAIL: a@gmail.com PGADMIN_DEFAULT_PASSWORD: a@gmail.com volumes: - pgadmin12:/Users/szhang/postgresql/.pgadmin12 ports: - &amp;#34;27777:80&amp;#34; networks: - pg12 restart: unless-stopped networks: pg12: driver: bridge volumes: postgres12: pgadmin12: 支持 Apple M1 这个版本唯一不同在于Postgres image 是ARM版本的，专门支持最新的Apple M1芯片的电脑。另外多说一句，Apple M1电脑可以跑Docker， 但是很多Docker image还没有ARM版，所以目前用M1电脑做开发（需要docker）还不方便。</description>
+    </item>
+    
+    <item>
+      <title>MacOS - Menu World Time</title>
+      <link>https://shubozhang.github.io/posts/tools/mac-world-time/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/mac-world-time/</guid>
+      <description>公司的产品是部署在全世界不同地区的服务器上的，为了一致，时间统一用UTC， 为了debug log方便，经常要参考GMT时间。有时和英国，印度等地方开会， 也需要查看各地时间。推荐下面这款免费软件，自己用了一段时间，很满意。
+世界时间显示  App Store： Menu World Time 效果图   特点  在menu bar直接显示世界多个城市时间 点击图标显示多个城市时间 显示黄昏，日落， 黎明，薄暮等等 可以添加世界任意地方时间  我自己的使用</description>
+    </item>
+    
+    <item>
+      <title>MacOS - 系统监视软件</title>
+      <link>https://shubozhang.github.io/posts/tools/mac-stats/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/mac-stats/</guid>
+      <description>MacOS自带的Activity Monitor，如果你想在menu bar上可以时时 监控，推荐下面这个开源app。相比较其他app，我最喜欢这款app可以显示数字进度，不是用bar。
+Stats  App：https://github.com/exelban/stats 效果图   特点  CPU 使用 GPU 使用 内存使用 硬盘使用 传感器(温度/电压/电力) 电池使用 网络速度 风扇速度  </description>
+    </item>
+    
+    <item>
+      <title>MacOS日历 - Itsycal</title>
+      <link>https://shubozhang.github.io/posts/tools/mac-itsycal/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shubozhang.github.io/posts/tools/mac-itsycal/</guid>
+      <description>每当我想快速看看接下来的日期的时候，就不自觉的会去点击menu bar的日历，每次都很懵， 它怎么不显示日历呢～～～这时候我一般去打开网页看了。后来又发生了几次，觉得常用功能应该花时间设置一下， 可能default不显示，改一下就可以。结果搞了半天还是不行，是不是我打开方式不对 :( 在去网上搜了下，还是不行，这是搞啥呢
+推荐下这个免费的cal tool - Itsycal  下载主页： https://www.mowglii.com/itsycal/ 效果图   特点 我用了2年左右，感觉基本功能还是很实用
+ 可以高亮周末 可以设置周一为第一天，方便查看 可以显示周数，很方便写周计划，报告报表 可以加提醒，或者sync up icloud events 多种时间显示格式  </description>
+    </item>
+    
+  </channel>
+</rss>
