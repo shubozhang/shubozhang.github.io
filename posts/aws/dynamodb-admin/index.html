@@ -3,7 +3,7 @@
 <a class=navbar-brand href=/><img src=/images/site/main-logo_hu864bbe108f1be1ae04b57f7f2fd9d631_5637_42x0_resize_box_2.png alt=Logo>Shubo Zhang</a>
 <button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse lang-selector" id=top-nav-items><ul class="navbar-nav ml-auto"></ul></div></div><img src=/images/site/main-logo_hu864bbe108f1be1ae04b57f7f2fd9d631_5637_42x0_resize_box_2.png class=d-none id=main-logo alt=Logo>
-<img src=/images/site/inverted-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_42x0_resize_box_2.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=https://shubozhang.github.io/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><i class="fas fa-minus-circle"></i><a class=active href=/posts/aws/>AWS</a><ul class=active><li><a href=/posts/aws/dynamodb-acid/>dynamodb-acid</a></li><li><a class=active href=/posts/aws/dynamodb-admin/>dynamodb-admin</a></li><li><a href=/posts/aws/3-ways-to-log-s3/>S3-log</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/db/>DB</a><ul><li><a href=/posts/db/mysql-count/>How to Use MySQL count</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/micronaut/>micronaut</a><ul><li><a href=/posts/micronaut/mn-graalvm/>mn-graalvm</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/software-design-and-engineering/>Software Design and Engineering</a><ul><li><i class="fas fa-plus-circle"></i><a href=/posts/software-design-and-engineering/clean-code/>Clean Code</a><ul><li><a href=/posts/software-design-and-engineering/clean-code/01-meaningful-names/>01-Meaningful Names</a></li></ul></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/tools/>Tools</a><ul><li><a href=/posts/tools/mac-itsycal/>mac-itsycal</a></li><li><a href=/posts/tools/mac-stats/>mac-stats</a></li><li><a href=/posts/tools/mac-world-time/>mac-world-time</a></li><li><a href=/posts/tools/owasp-cn-01/>owasp-1-sql-injection</a></li><li><a href=/posts/tools/owasp-cn-02/>owasp-2-broken-authentication</a></li><li><a href=/posts/tools/owasp-cn-03/>owasp-3-sensitive-data-exposure</a></li><li><a href=/posts/tools/pg12/>Postgres 12 + pgadmin in Docker</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://shubozhang.github.io/posts/aws/dynamodb-admin/hero.svg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/site/shubo_zhang.jpg alt="Author Image"><h5 class=author-name>Shubo Zhang</h5><p>March 16, 2021</p></div><div class=title><h1>介绍一个本地DynamoDB图形界面应用: dynamodb-admin</h1></div><div class=post-content id=post-content><p>DynamoDB一直被人诟病没有好的query tool，查询数据很麻烦，到现在也没有。在就是本地开发不是很友好，AWS提供了Dynamodb Local，但是aws cli query数据
+<img src=/images/site/inverted-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_42x0_resize_box_2.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=https://shubozhang.github.io/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><i class="fas fa-minus-circle"></i><a class=active href=/posts/aws/>AWS</a><ul class=active><li><a href=/posts/aws/dynamodb-acid/>dynamodb-acid</a></li><li><a class=active href=/posts/aws/dynamodb-admin/>dynamodb-admin</a></li><li><a href=/posts/aws/3-ways-to-log-s3/>S3-log</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/db/>DB</a><ul><li><a href=/posts/db/mysql-count/>How to Use MySQL count</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/micronaut/>micronaut</a><ul><li><a href=/posts/micronaut/mn-graalvm/>mn-graalvm</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/software-design-and-engineering/>Software Design and Engineering</a><ul><li><i class="fas fa-plus-circle"></i><a href=/posts/software-design-and-engineering/clean-code/>Clean Code</a><ul><li><a href=/posts/software-design-and-engineering/clean-code/01-meaningful-names/>01-Meaningful Names</a></li></ul></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/tools/>Tools</a><ul><li><a href=/posts/tools/mac-itsycal/>mac-itsycal</a></li><li><a href=/posts/tools/mac-stats/>mac-stats</a></li><li><a href=/posts/tools/mac-world-time/>mac-world-time</a></li><li><a href=/posts/tools/owasp-cn-01/>owasp-1-sql-injection</a></li><li><a href=/posts/tools/owasp-cn-02/>owasp-2-broken-authentication</a></li><li><a href=/posts/tools/owasp-cn-03/>owasp-3-sensitive-data-exposure</a></li><li><a href=/posts/tools/owasp-cn-04/>owasp-4-XML-External-Entities (XXE)</a></li><li><a href=/posts/tools/pg12/>Postgres 12 + pgadmin in Docker</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://shubozhang.github.io/posts/aws/dynamodb-admin/hero.svg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/site/shubo_zhang.jpg alt="Author Image"><h5 class=author-name>Shubo Zhang</h5><p>March 16, 2021</p></div><div class=title><h1>介绍一个本地DynamoDB图形界面应用: dynamodb-admin</h1></div><div class=post-content id=post-content><p>DynamoDB一直被人诟病没有好的query tool，查询数据很麻烦，到现在也没有。在就是本地开发不是很友好，AWS提供了Dynamodb Local，但是aws cli query数据
 还是很麻烦。今天推荐一个给DynamoDB Local做的Graphical User Interface (GUI)&mdash;dynamodb-admin，可以像在AWS console一样，让本地数据可视化和操作化。</p><h3 id=快速设置>快速设置</h3><ol><li><p>通过npm安装dynamodb-admin</p><pre><code class=language-node data-lang=node>npm install -g dynamodb-admin
 </code></pre></li><li><p>运行docker： local dynamodb</p><p><code>docker-compose.yml</code> file</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile>version: <span style=color:#e6db74>&#39;3.8&#39;</span><span style=color:#960050;background-color:#1e0010>
 </span><span style=color:#960050;background-color:#1e0010></span>services:<span style=color:#960050;background-color:#1e0010>
@@ -18,7 +18,7 @@
 </span><span style=color:#960050;background-color:#1e0010></span>    working_dir: /home/dynamodblocal<span style=color:#960050;background-color:#1e0010>
 </span></code></pre></div><p>Run <code>docker-compose.yml</code> file</p><pre><code>docker-compose up -d
 </code></pre></li><li><p>启动dynamodb-admin</p><ul><li>MacOS：<pre><code>dynamodb-admin
-    
+
 // 或者定义region和credentials
 AWS_REGION=eu-west-1 AWS_ACCESS_KEY_ID=local AWS_SECRET_ACCESS_KEY=local dynamodb-admin
 </code></pre></li><li>Windows:<pre><code>export DYNAMO_ENDPOINT=http://localhost:8000
@@ -82,23 +82,23 @@ dynamodb-admin
 <span style=color:#66d9ef>private</span> String albumTitle<span style=color:#f92672>;</span>
 <span style=color:#66d9ef>private</span> Integer year<span style=color:#f92672>;</span>
 <span style=color:#66d9ef>private</span> String upc<span style=color:#f92672>;</span>
-   
+
     <span style=color:#a6e22e>@DynamoDBHashKey</span><span style=color:#f92672>(</span>attributeName<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Artist&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getArtist</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> artist<span style=color:#f92672>;}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setArtist</span><span style=color:#f92672>(</span>String artist<span style=color:#f92672>)</span> <span style=color:#f92672>{</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>artist</span> <span style=color:#f92672>=</span> artist<span style=color:#f92672>;}</span>
-   
+
     <span style=color:#a6e22e>@DynamoDBRangeKey</span><span style=color:#f92672>(</span>attributeName<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;SongTitle&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getSongTitle</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> songTitle<span style=color:#f92672>;}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setSongTitle</span><span style=color:#f92672>(</span>String songTitle<span style=color:#f92672>)</span> <span style=color:#f92672>{</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>songTitle</span> <span style=color:#f92672>=</span> songTitle<span style=color:#f92672>;}</span>
-   
+
     <span style=color:#a6e22e>@DynamoDBIndexRangeKey</span><span style=color:#f92672>(</span>attributeName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;AlbumTitle&#34;</span><span style=color:#f92672>,</span> localSecondaryIndexName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;lsi_album&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getAlbumTitle</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> albumTitle<span style=color:#f92672>;}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setAlbumTitle</span><span style=color:#f92672>(</span>String albumTitle<span style=color:#f92672>)</span> <span style=color:#f92672>{</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>albumTitle</span> <span style=color:#f92672>=</span> albumTitle<span style=color:#f92672>;}</span>
-   
+
     <span style=color:#a6e22e>@DynamoDBAttribute</span><span style=color:#f92672>(</span>attributeName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Year&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> Integer <span style=color:#a6e22e>getYear</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> year<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setYear</span><span style=color:#f92672>(</span>Integer year<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>year</span> <span style=color:#f92672>=</span> year<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
-   
+
     <span style=color:#a6e22e>@DynamoDBIndexHashKey</span><span style=color:#f92672>(</span>attributeName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Upc&#34;</span><span style=color:#f92672>,</span> globalSecondaryIndexName<span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;gsi_upc&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>getUpc</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> upc<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setUpc</span><span style=color:#f92672>(</span>String upc<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>upc</span> <span style=color:#f92672>=</span> upc<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
@@ -111,7 +111,7 @@ dynamodb-admin
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> DynamoDBMapper mapper<span style=color:#f92672>;</span>
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> Index lsi_album<span style=color:#f92672>;</span>
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> Index gsi_upc<span style=color:#f92672>;</span>
-   
+
     <span style=color:#66d9ef>static</span> <span style=color:#f92672>{</span>
         AWSCredentialsProvider creds <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> AWSCredentialsProvider<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
             <span style=color:#a6e22e>@Override</span>
@@ -128,7 +128,7 @@ dynamodb-admin
         Table table <span style=color:#f92672>=</span> dynamoDb<span style=color:#f92672>.</span><span style=color:#a6e22e>getTable</span><span style=color:#f92672>(</span>TABLE_NAME<span style=color:#f92672>);</span>
         lsi_album <span style=color:#f92672>=</span> table<span style=color:#f92672>.</span><span style=color:#a6e22e>getIndex</span><span style=color:#f92672>(</span>LSI_ALBUM_INDEX_NAME<span style=color:#f92672>);</span>
         gsi_upc <span style=color:#f92672>=</span> table<span style=color:#f92672>.</span><span style=color:#a6e22e>getIndex</span><span style=color:#f92672>(</span>GSI_UPC_INDEX_NAME<span style=color:#f92672>);</span>
-   
+
     <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> DynamoDBMapper <span style=color:#a6e22e>getMapper</span><span style=color:#f92672>(){</span> <span style=color:#66d9ef>return</span> mapper<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Index <span style=color:#a6e22e>getLSIAlbumTitle</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> lsi_album<span style=color:#f92672>;</span> <span style=color:#f92672>}</span>
@@ -139,11 +139,11 @@ dynamodb-admin
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> DynamoDBMapper mapper <span style=color:#f92672>=</span> DBMapper<span style=color:#f92672>.</span><span style=color:#a6e22e>getMapper</span><span style=color:#f92672>();</span>
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> Index lsiAlbum <span style=color:#f92672>=</span> DBMapper<span style=color:#f92672>.</span><span style=color:#a6e22e>getLSIAlbumTitle</span><span style=color:#f92672>();</span>
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> Index gsiAlbum <span style=color:#f92672>=</span> DBMapper<span style=color:#f92672>.</span><span style=color:#a6e22e>getGSIUpc</span><span style=color:#f92672>();</span>
-   
+
     <span style=color:#66d9ef>public</span> Music <span style=color:#a6e22e>getItem</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> <span style=color:#66d9ef>return</span> mapper<span style=color:#f92672>.</span><span style=color:#a6e22e>load</span><span style=color:#f92672>(</span>music<span style=color:#f92672>);</span> <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>saveItem</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> mapper<span style=color:#f92672>.</span><span style=color:#a6e22e>save</span><span style=color:#f92672>(</span>music<span style=color:#f92672>);</span> <span style=color:#f92672>}</span>
     <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>deleteItem</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> mapper<span style=color:#f92672>.</span><span style=color:#a6e22e>delete</span><span style=color:#f92672>(</span>music<span style=color:#f92672>);</span> <span style=color:#f92672>}</span>
-   
+
     <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>Music<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryItemByLSI</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
         List<span style=color:#f92672>&lt;</span>Music<span style=color:#f92672>&gt;</span> musicList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;();</span>
         QuerySpec spec <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> QuerySpec<span style=color:#f92672>()</span>
@@ -151,7 +151,7 @@ dynamodb-admin
                 <span style=color:#f92672>.</span><span style=color:#a6e22e>withValueMap</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> ValueMap<span style=color:#f92672>()</span>
                         <span style=color:#f92672>.</span><span style=color:#a6e22e>withString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;:v_artist&#34;</span><span style=color:#f92672>,</span> music<span style=color:#f92672>.</span><span style=color:#a6e22e>getArtist</span><span style=color:#f92672>())</span>
                         <span style=color:#f92672>.</span><span style=color:#a6e22e>withString</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;:v_title&#34;</span><span style=color:#f92672>,</span> music<span style=color:#f92672>.</span><span style=color:#a6e22e>getAlbumTitle</span><span style=color:#f92672>()));</span>
-   
+
         ItemCollection<span style=color:#f92672>&lt;</span>QueryOutcome<span style=color:#f92672>&gt;</span> items <span style=color:#f92672>=</span> lsiAlbum<span style=color:#f92672>.</span><span style=color:#a6e22e>query</span><span style=color:#f92672>(</span>spec<span style=color:#f92672>);</span>
         Iterator<span style=color:#f92672>&lt;</span>Item<span style=color:#f92672>&gt;</span> itemsIter <span style=color:#f92672>=</span> items<span style=color:#f92672>.</span><span style=color:#a6e22e>iterator</span><span style=color:#f92672>();</span>
         <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>itemsIter<span style=color:#f92672>.</span><span style=color:#a6e22e>hasNext</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
@@ -162,7 +162,7 @@ dynamodb-admin
         <span style=color:#f92672>}</span>
         <span style=color:#66d9ef>return</span> musicList<span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
-   
+
     <span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>Music<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryItemByGSI</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
         List<span style=color:#f92672>&lt;</span>Music<span style=color:#f92672>&gt;</span> musicList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;();</span>
         QuerySpec spec <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> QuerySpec<span style=color:#f92672>()</span>
@@ -179,7 +179,7 @@ dynamodb-admin
         <span style=color:#66d9ef>return</span> musicList<span style=color:#f92672>;</span>
     <span style=color:#f92672>}</span>
 <span style=color:#f92672>}</span>
-</code></pre></div></li><li><p>Controller for CRUD</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>   
+</code></pre></div></li><li><p>Controller for CRUD</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
 <span style=color:#a6e22e>@Controller</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/music&#34;</span><span style=color:#f92672>)</span>
 <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MusicController</span> <span style=color:#f92672>{</span>
     <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Logger log <span style=color:#f92672>=</span> LoggerFactory<span style=color:#f92672>.</span><span style=color:#a6e22e>getLogger</span><span style=color:#f92672>(</span>MusicController<span style=color:#f92672>.</span><span style=color:#a6e22e>class</span><span style=color:#f92672>);</span>
@@ -187,7 +187,7 @@ dynamodb-admin
     MusicDao musicDao<span style=color:#f92672>;</span>
     <span style=color:#a6e22e>@Inject</span>
     ObjectMapper mapper<span style=color:#f92672>;</span>
-       
+
     <span style=color:#a6e22e>@Get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;{?music*}&#34;</span><span style=color:#f92672>)</span> <span style=color:#75715e>// this is used to mapping request parameters
 </span><span style=color:#75715e></span>    <span style=color:#a6e22e>@Produces</span><span style=color:#f92672>(</span>MediaType<span style=color:#f92672>.</span><span style=color:#a6e22e>APPLICATION_JSON</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> HttpResponse <span style=color:#a6e22e>getEvent</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
@@ -202,7 +202,7 @@ dynamodb-admin
         <span style=color:#f92672>}</span>
         <span style=color:#66d9ef>return</span> HttpResponse<span style=color:#f92672>.</span><span style=color:#a6e22e>ok</span><span style=color:#f92672>(</span>item<span style=color:#f92672>);</span>
     <span style=color:#f92672>}</span>
-   
+
     <span style=color:#a6e22e>@Get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/query/lsi{?music*}&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#a6e22e>@Produces</span><span style=color:#f92672>(</span>MediaType<span style=color:#f92672>.</span><span style=color:#a6e22e>APPLICATION_JSON</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> HttpResponse <span style=color:#a6e22e>getEventByLSI</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
@@ -217,7 +217,7 @@ dynamodb-admin
         <span style=color:#f92672>}</span>
         <span style=color:#66d9ef>return</span> HttpResponse<span style=color:#f92672>.</span><span style=color:#a6e22e>ok</span><span style=color:#f92672>(</span>items<span style=color:#f92672>);</span>
     <span style=color:#f92672>}</span>
-   
+
     <span style=color:#a6e22e>@Get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/query/gsi{?music*}&#34;</span><span style=color:#f92672>)</span>
     <span style=color:#a6e22e>@Produces</span><span style=color:#f92672>(</span>MediaType<span style=color:#f92672>.</span><span style=color:#a6e22e>APPLICATION_JSON</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> HttpResponse <span style=color:#a6e22e>getEventByGSI</span><span style=color:#f92672>(</span>Music music<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
@@ -232,14 +232,14 @@ dynamodb-admin
         <span style=color:#f92672>}</span>
         <span style=color:#66d9ef>return</span> HttpResponse<span style=color:#f92672>.</span><span style=color:#a6e22e>ok</span><span style=color:#f92672>(</span>items<span style=color:#f92672>);</span>
     <span style=color:#f92672>}</span>
-   
+
     <span style=color:#a6e22e>@Post</span>
     <span style=color:#a6e22e>@Produces</span><span style=color:#f92672>(</span>MediaType<span style=color:#f92672>.</span><span style=color:#a6e22e>APPLICATION_JSON</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> HttpResponse <span style=color:#a6e22e>saveEvent</span><span style=color:#f92672>(</span><span style=color:#a6e22e>@Body</span> String body<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
         musicDao<span style=color:#f92672>.</span><span style=color:#a6e22e>saveItem</span><span style=color:#f92672>(</span>mapper<span style=color:#f92672>.</span><span style=color:#a6e22e>readValue</span><span style=color:#f92672>(</span>body<span style=color:#f92672>,</span> Music<span style=color:#f92672>.</span><span style=color:#a6e22e>class</span><span style=color:#f92672>));</span>
         <span style=color:#66d9ef>return</span> HttpResponse<span style=color:#f92672>.</span><span style=color:#a6e22e>ok</span><span style=color:#f92672>();</span>
     <span style=color:#f92672>}</span>
-   
+
     <span style=color:#a6e22e>@Delete</span>
     <span style=color:#a6e22e>@Produces</span><span style=color:#f92672>(</span>MediaType<span style=color:#f92672>.</span><span style=color:#a6e22e>APPLICATION_JSON</span><span style=color:#f92672>)</span>
     <span style=color:#66d9ef>public</span> HttpResponse <span style=color:#a6e22e>deleteEvent</span><span style=color:#f92672>(</span><span style=color:#a6e22e>@Body</span> String body<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
@@ -317,7 +317,7 @@ dynamodb-admin
      assertTrue<span style=color:#f92672>(</span>musicList<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span>0<span style=color:#f92672>).</span><span style=color:#a6e22e>getAlbumTitle</span><span style=color:#f92672>().</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Dangerous&#34;</span><span style=color:#f92672>));</span>
      assertTrue<span style=color:#f92672>(</span>musicList<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span>0<span style=color:#f92672>).</span><span style=color:#a6e22e>getYear</span><span style=color:#f92672>().</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span>1991<span style=color:#f92672>));</span>
  <span style=color:#f92672>}</span>
-    
+
  <span style=color:#a6e22e>@Test</span>
  <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>testDeleteEvent</span><span style=color:#f92672>()</span> <span style=color:#66d9ef>throws</span> JsonProcessingException <span style=color:#f92672>{</span>
      Music music <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Music<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Robin&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;Angel&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;Angel&#34;</span><span style=color:#f92672>,</span> 2000<span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;08000&#34;</span><span style=color:#f92672>);</span>
