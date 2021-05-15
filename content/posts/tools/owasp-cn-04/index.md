@@ -3,11 +3,11 @@ title: "OWASP 十大网站安全风险 （四）：XML外部处理器漏洞"
 date: 2021-04-30
 hero: owasp-top-ten.jpg
 menu:
-sidebar:
-name: owasp-4-XML-External-Entities (XXE)
-identifier: owasp-4
-parent: tools
-weight: 10
+    sidebar:
+        name: owasp-4-XML-External-Entities (XXE)
+        identifier: owasp-4
+        parent: tools
+        weight: 10
 ---
 
 ## OWASP 十大信息安全主题
@@ -33,60 +33,60 @@ External entities can be used to disclose internal files using the file URI hand
 
 ### 了解XML外部处理器漏洞
 
-attackers can exploit vulnerable xml processors if they can upload xml or include hostile content in an xml document
-exploiting vulnerable code dependencies or integrations.
+attackers can exploit vulnerable xml processors if they can upload xml or include hostile content in an xml document 
+exploiting vulnerable code dependencies or integrations. 
 
-By default many older xml processors a while specifications of an external entity, URI, that is the reference
+By default many older xml processors a while specifications of an external entity, URI, that is the reference 
 
 and evaluated during xml processing.
 
 
 SAST tools can discover this issue by inspecting dependencies and configuration.
 
-DAST tools require additional manual steps to detect and exploit this issue. Manual testers need to be trained in how
+DAST tools require additional manual steps to detect and exploit this issue. Manual testers need to be trained in how 
 to test for XXE, as it is not commonly tested as of 2017.
 
 
-These flaws, can be used to extract data ,executed remote request from the server , scan internal systems and or perform
-a denial of service attack, as well as executed other attacks
+These flaws, can be used to extract data ,executed remote request from the server , scan internal systems and or perform 
+a denial of service attack, as well as executed other attacks 
 
 The business impact depends on the protections of all affected applications and data.
 
 
 ### Is your application Vulnerable
-Applications, and in particular xml based web services for downstream integrations might be vulnerable to attack if the
-application, except xml directly for xml uploads, especially from untrusted sources for inserts untrusted data into xml
+Applications, and in particular xml based web services for downstream integrations might be vulnerable to attack if the 
+application, except xml directly for xml uploads, especially from untrusted sources for inserts untrusted data into xml 
 documents which is then parsed by an xml processor.
 
 
 Any of the xml processors in the application or soap based web services has DTD or document type definitions enabled.
 
 
-As the exact mechanism for disabling DTD processing varies by processor, it is good practice to consult a reference,
+As the exact mechanism for disabling DTD processing varies by processor, it is good practice to consult a reference, 
 such as the OWASP cheat sheet 'XXE prevention'.
 
 
 If your application uses SAML for identity processing within federated security or single sign on sso purposes.
-SAML uses xml for identity assertions, and may be vulnerable.
+ SAML uses xml for identity assertions, and may be vulnerable.
 
 
-If the application uses soap to version 1.2, it is likely susceptible to XXE attacks if xml entities so being passed
+If the application uses soap to version 1.2, it is likely susceptible to XXE attacks if xml entities so being passed 
 through soap framework.
 
 
-Being vulnerable to XXE attacks likely means that the application is vulnerable to denial of service attacks,
+Being vulnerable to XXE attacks likely means that the application is vulnerable to denial of service attacks, 
 including the billion laughs attack.
 
 ### Examples
 
-Numerous public execs the issues have been discovered instantly attacking and then devices and XXE occurs in a lot of
+Numerous public execs the issues have been discovered instantly attacking and then devices and XXE occurs in a lot of 
 unexpected places, including deeply nested dependencies, the easiest way is to upload malicious xml file accepted.
 
 
-##### scenario one the attacker attempts to extract data from the server
+##### scenario one the attacker attempts to extract data from the server 
 
-##### scenario to an attack improves the servers private
-network by changing the below entity on
+##### scenario to an attack improves the servers private 
+network by changing the below entity on 
 
 ##### scenario three an attacker attempts a denial of service attack by including a potentially endless file.
 
@@ -96,7 +96,7 @@ network by changing the below entity on
 Developer training is essential to identify and mitigate XXE.
 
 
-Besides that prevented XXE requires that you whenever possible use less complex data formats, such as Jason and avoid
+Besides that prevented XXE requires that you whenever possible use less complex data formats, such as Jason and avoid 
 serialization of sensitive data.
 
 
@@ -115,7 +115,7 @@ Implement positive server-side input validation, filtering, or sanitization to p
 Verify that xml or XSL file upload functionality validates incoming xml using XSD validation or similar.
 
 
-SAST tools can help detect XXE in source code, although manual code review is the best alternative in large complex
+SAST tools can help detect XXE in source code, although manual code review is the best alternative in large complex 
 applications with many integrations.
 
 
